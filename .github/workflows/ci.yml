@@ -1,0 +1,16 @@
+name: "Modular CI"
+
+on: 
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run tests
+      run: |
+        bundle install
+        bundle exec fastlane scan
