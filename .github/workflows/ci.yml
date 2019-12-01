@@ -6,11 +6,21 @@ on:
       - master
 
 jobs:
-  test:
+  validate:
+    name: Validate
     runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Run tests
-      run: |
-        bundle install
-        bundle exec fastlane scan
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Install tooling
+        run: |
+          sudo xcode-select -s /Applications/Xcode_11.app
+          bundle install
+          brew install mint
+          mint install apple/swift-format@swift-5.1-branch
+      - name: Check code formatting
+        run: |
+          swift-format -r -m lint Modular ModularTests
+      - name: Run tests
+        run: |
+          bundle exec fastlane scan
