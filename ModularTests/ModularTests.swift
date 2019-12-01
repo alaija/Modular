@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import Modular
 
 class ModularTests: XCTestCase {
