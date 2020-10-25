@@ -16,7 +16,7 @@ jobs:
         run: |
           bundle install
           brew install mint
-          mint install apple/swift-format@swift-5.1-branch
+          mint install apple/swift-format@swift-5.3-branch
       - name: Check code formatting
         run: |
           swift-format -r -m lint Modular ModularTests
