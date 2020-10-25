@@ -1,6 +1,0 @@
-version: "Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)"
-options: "af783412895fb2b1d1085e2bec98d818"
-build_time: [1578738442, 725936000]
-inputs:
-  "/Users/alaija/Developer/Modular/Modules/Core/Configuration/Tests/ConfigurationTests/ConfigurationTests.swift": [1578738423, 641485951]
-  "/Users/alaija/Developer/Modular/Modules/Core/Configuration/Tests/ConfigurationTests/XCTestManifests.swift": [1578738423, 641646527]
