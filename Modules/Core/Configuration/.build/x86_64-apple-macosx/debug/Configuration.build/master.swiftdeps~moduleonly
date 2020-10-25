@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)"
+options: "5a9c46bbeee9b4ecf8c78e482e55de54"
+build_time: [1578738437, 538787000]
+inputs:
+  "/Users/alaija/Developer/Modular/Modules/Core/Configuration/Sources/Configuration/Configuration.swift": [1578738423, 640888981]

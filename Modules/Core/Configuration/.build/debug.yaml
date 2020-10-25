@@ -1,0 +1,65 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "main": ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.swiftmodule","<Configuration-debug.module>"]
+  "test": ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.swiftmodule","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationPackageTests.xctest/Contents/MacOS/ConfigurationPackageTests","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationTests.swiftmodule","<Configuration-debug.module>","<ConfigurationPackageTests-debug.test>","<ConfigurationTests-debug.module>"]
+  "Configuration-debug.module": ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.swiftmodule","<Configuration-debug.module>"]
+  "ConfigurationPackageTests-debug.test": ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationPackageTests.xctest/Contents/MacOS/ConfigurationPackageTests","<ConfigurationPackageTests-debug.test>"]
+  "ConfigurationTests-debug.module": ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationTests.swiftmodule","<ConfigurationTests-debug.module>"]
+default: "main"
+commands: 
+  "<C.Configuration-debug.module>":
+    tool: phony
+    inputs: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.swiftmodule"]
+    outputs: ["<Configuration-debug.module>"]
+
+  "<C.ConfigurationPackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationPackageTests.xctest/Contents/MacOS/ConfigurationPackageTests"]
+    outputs: ["<ConfigurationPackageTests-debug.test>"]
+
+  "<C.ConfigurationTests-debug.module>":
+    tool: phony
+    inputs: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationTests.swiftmodule"]
+    outputs: ["<ConfigurationTests-debug.module>"]
+
+  "C.Configuration-debug.module":
+    tool: swift-compiler
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "Configuration"
+    module-output-path: "/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.swiftmodule"
+    inputs: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/Sources/Configuration/Configuration.swift"]
+    outputs: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.build/Configuration.swift.o","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.swiftmodule"]
+    import-paths: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.build"
+    objects: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.build/Configuration.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.10","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Onone","-g","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-color-diagnostics"]
+    sources: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/Sources/Configuration/Configuration.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: "12"
+
+  "C.ConfigurationPackageTests-debug.test":
+    tool: shell
+    description: "Linking ./.build/x86_64-apple-macosx/debug/ConfigurationPackageTests.xctest/Contents/MacOS/ConfigurationPackageTests"
+    inputs: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.build/Configuration.swift.o","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationTests.build/ConfigurationTests.swift.o","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationTests.build/XCTestManifests.swift.o"]
+    outputs: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationPackageTests.xctest/Contents/MacOS/ConfigurationPackageTests"]
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-g","-L","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug","-o","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationPackageTests.xctest/Contents/MacOS/ConfigurationPackageTests","-module-name","ConfigurationPackageTests","-Xlinker","-bundle","@/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx","-target","x86_64-apple-macosx10.10","-L","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"]
+
+  "C.ConfigurationTests-debug.module":
+    tool: swift-compiler
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "ConfigurationTests"
+    module-output-path: "/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationTests.swiftmodule"
+    inputs: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.swiftmodule","/Users/alaija/Developer/Modular/Modules/Core/Configuration/Tests/ConfigurationTests/ConfigurationTests.swift","/Users/alaija/Developer/Modular/Modules/Core/Configuration/Tests/ConfigurationTests/XCTestManifests.swift"]
+    outputs: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationTests.build/ConfigurationTests.swift.o","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationTests.build/XCTestManifests.swift.o","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationTests.swiftmodule"]
+    import-paths: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationTests.build"
+    objects: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationTests.build/ConfigurationTests.swift.o","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ConfigurationTests.build/XCTestManifests.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.10","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Onone","-g","-enable-testing","-j12","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-color-diagnostics"]
+    sources: ["/Users/alaija/Developer/Modular/Modules/Core/Configuration/Tests/ConfigurationTests/ConfigurationTests.swift","/Users/alaija/Developer/Modular/Modules/Core/Configuration/Tests/ConfigurationTests/XCTestManifests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: "12"
+

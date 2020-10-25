@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.build/master.swiftdeps"
+  },
+  "/Users/alaija/Developer/Modular/Modules/Core/Configuration/Sources/Configuration/Configuration.swift": {
+    "dependencies": "/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.build/Configuration.d",
+    "object": "/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.build/Configuration.swift.o",
+    "swiftmodule": "/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.build/Configuration~partial.swiftmodule",
+    "swift-dependencies": "/Users/alaija/Developer/Modular/Modules/Core/Configuration/.build/x86_64-apple-macosx/debug/Configuration.build/Configuration.swiftdeps"
+  }
+}
