@@ -221,7 +221,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./scripts/local-format.sh\n";
+			shellScript = "swift-lint-tool\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

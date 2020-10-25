@@ -1,0 +1,16 @@
+{
+    "formatExecutables" : [
+        ["swift-format", "-i"]
+    ],
+    "lintExecutables" : [
+        ["swift-format", "--mode=lint"]
+    ],
+    "exculded" : [
+        "fastlane/",
+        "build/",
+        ".build/",
+        "Package.swift",
+    ],
+    "included": [],
+    "baseBranch": "origin/master"
+}
