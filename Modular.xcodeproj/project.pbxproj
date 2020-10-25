@@ -221,7 +221,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swift-lint-tool\n";
+			shellScript = "if ! which swift-lint-tool > /dev/null; then\n  echo \"warning: swift-lint-tool is missing\"\n  exit 0\nfi\n\nswift-lint-tool\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
