@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RouteComposer",
+        "repositoryURL": "https://github.com/ekazaev/route-composer.git",
+        "state": {
+          "branch": null,
+          "revision": "019e7c94a2b7ef0b13b932eff097e5ff9e23a511",
+          "version": "2.6.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5069632254C9D0D00D56CFF /* RouteComposer in Frameworks */ = {isa = PBXBuildFile; productRef = F5069631254C9D0D00D56CFF /* RouteComposer */; };
 		F5AA039C23485B2200C85601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AA039B23485B2200C85601 /* AppDelegate.swift */; };
 		F5AA039E23485B2200C85601 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AA039D23485B2200C85601 /* SceneDelegate.swift */; };
 		F5AA03A023485B2200C85601 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AA039F23485B2200C85601 /* ContentView.swift */; };
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5069632254C9D0D00D56CFF /* RouteComposer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +126,9 @@
 			dependencies = (
 			);
 			name = Modular;
+			packageProductDependencies = (
+				F5069631254C9D0D00D56CFF /* RouteComposer */,
+			);
 			productName = Modular;
 			productReference = F5AA039823485B2200C85601 /* Modular.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +179,9 @@
 				Base,
 			);
 			mainGroup = F5AA038F23485B2200C85601;
+			packageReferences = (
+				F5069630254C9D0D00D56CFF /* XCRemoteSwiftPackageReference "route-composer" */,
+			);
 			productRefGroup = F5AA039923485B2200C85601 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -491,6 +499,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F5069630254C9D0D00D56CFF /* XCRemoteSwiftPackageReference "route-composer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ekazaev/route-composer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F5069631254C9D0D00D56CFF /* RouteComposer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5069630254C9D0D00D56CFF /* XCRemoteSwiftPackageReference "route-composer" */;
+			productName = RouteComposer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F5AA039023485B2200C85601 /* Project object */;
 }
