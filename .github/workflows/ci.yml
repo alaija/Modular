@@ -15,11 +15,28 @@ jobs:
           xcode-version: latest-stable
       - name: Checkout
         uses: actions/checkout@master
-      - name: Install tooling
+
+      - name: Restore swift-format build cache
+        uses: actions/cache@v2
+        with:
+          path: .build
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
+
+      - name: swift-format build
         run: |
-          bundle install
-          brew install mint
-          mint install apple/swift-format@swift-5.3-branch
+          if [ -d ".build" ]; then
+            if ! [ -x "$(command -v swift-format)" ]; then
+              sudo cp -f .build/release/swift-format /usr/local/bin/swift-format
+            fi
+          else
+            git clone -b swift-5.3-branch https://github.com/apple/swift-format.git
+            cd swift-format
+            swift build --disable-sandbox -c release
+            mv .build .. && cd ..
+            sudo cp -f .build/release/swift-format /usr/local/bin/swift-format
+          fi
       - name: Check code formatting
         run: |
           swift-format -r -m lint Modular ModularTests
