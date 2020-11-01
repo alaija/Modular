@@ -28,7 +28,7 @@ jobs:
         run: |
           if [ -d ".build" ]; then
             if ! [ -x "$(command -v swift-format)" ]; then
-              sudo chmod +777 .build/release/swift-format
+              sudo chmod 777 .build/release/swift-format
               sudo cp -f .build/release/swift-format /usr/local/bin/swift-format
             fi
           else
