@@ -28,19 +28,7 @@ jobs:
         run: |
           if [ -d ".build" ]; then
             if ! [ -x "$(command -v swift-format)" ]; then
-              
-              sudo cp -f .build/release/swift-format /usr/local/bin/swift-format
-              if [ -x "/usr/local/bin/swift-format" ]; then
-                  echo "File '$file' is executable"
-              else
-                  echo "File '$file' is not executable or found"
-              fi
-              sudo chmod 777 /usr/local/bin/swift-format
-              if [ -x "/usr/local/bin/swift-format" ]; then
-                  echo "File '$file' is executable"
-              else
-                  echo "File '$file' is not executable or found"
-              fi
+              cp -f .build/release/swift-format /usr/local/bin/swift-format
             fi
           else
             git clone -b swift-5.3-branch https://github.com/apple/swift-format.git
@@ -51,7 +39,7 @@ jobs:
           fi
       - name: Check code formatting
         run: |
-          swift-format -r -m lint Modular ModularTests
+          sudo swift-format -r -m lint Modular ModularTests
       - name: Install tooling
         run: |
           bundle install
