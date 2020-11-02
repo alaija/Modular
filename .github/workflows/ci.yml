@@ -28,18 +28,19 @@ jobs:
         run: |
           if [ -d ".build" ]; then
             if ! [ -x "$(command -v swift-format)" ]; then
-              if [ -x ".build/release/swift-format" ]; then
-                  echo "File '$file' is executable"
-              else
-                  echo "File '$file' is not executable or found"
-              fi
-              sudo chmod 777 .build/release/swift-format
-              if [ -x ".build/release/swift-format" ]; then
-                  echo "File '$file' is executable"
-              else
-                  echo "File '$file' is not executable or found"
-              fi
+              
               sudo cp -f .build/release/swift-format /usr/local/bin/swift-format
+              if [ -x "/usr/local/bin/swift-format" ]; then
+                  echo "File '$file' is executable"
+              else
+                  echo "File '$file' is not executable or found"
+              fi
+              sudo chmod 777 /usr/local/bin/swift-format
+              if [ -x "/usr/local/bin/swift-format" ]; then
+                  echo "File '$file' is executable"
+              else
+                  echo "File '$file' is not executable or found"
+              fi
             fi
           else
             git clone -b swift-5.3-branch https://github.com/apple/swift-format.git
