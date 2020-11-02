@@ -28,7 +28,17 @@ jobs:
         run: |
           if [ -d ".build" ]; then
             if ! [ -x "$(command -v swift-format)" ]; then
+              if [ -x ".build/release/swift-format" ] then
+                  echo "File '$file' is executable"
+              else
+                  echo "File '$file' is not executable or found"
+              endif
               sudo chmod 777 .build/release/swift-format
+              if [ -x ".build/release/swift-format" ] then
+                  echo "File '$file' is executable"
+              else
+                  echo "File '$file' is not executable or found"
+              endif
               sudo cp -f .build/release/swift-format /usr/local/bin/swift-format
             fi
           else
