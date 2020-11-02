@@ -15,11 +15,11 @@ jobs:
           xcode-version: latest-stable
       - name: Checkout
         uses: actions/checkout@master
-        - name: Download a Build Artifact
-          uses: actions/download-artifact@v2.0.5
-          with:
-            name: swift-format
-            path: /usr/local/bin/swift-format
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.0.5
+        with:
+          name: swift-format
+          path: /usr/local/bin/swift-format
       - name: swift-format build
         run: |
           if ! [ -x "$(command -v swift-format)" ]; then
