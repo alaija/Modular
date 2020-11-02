@@ -29,6 +29,7 @@ jobs:
           if [ -d ".build" ]; then
             if ! [ -x "$(command -v swift-format)" ]; then
               cp -f .build/release/swift-format /usr/local/bin/swift-format
+              file /usr/local/bin/swift-format
             fi
           else
             git clone -b swift-5.3-branch https://github.com/apple/swift-format.git
