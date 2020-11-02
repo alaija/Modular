@@ -15,29 +15,25 @@ jobs:
           xcode-version: latest-stable
       - name: Checkout
         uses: actions/checkout@master
-
-      - name: Restore swift-format build cache
-        uses: actions/cache@v2
-        with:
-          path: .build
-          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
-          restore-keys: |
-            ${{ runner.os }}-spm-
-
+        - name: Download a Build Artifact
+          uses: actions/download-artifact@v2.0.5
+          with:
+            name: swift-format
+            path: /usr/local/bin/swift-format
       - name: swift-format build
         run: |
-          if [ -d ".build" ]; then
-            if ! [ -x "$(command -v swift-format)" ]; then
-              mv .build/release/swift-format /usr/local/bin/swift-format
-              file /usr/local/bin/swift-format
-            fi
-          else
+          if ! [ -x "$(command -v swift-format)" ]; then
             git clone -b swift-5.3-branch https://github.com/apple/swift-format.git
             cd swift-format
             swift build --disable-sandbox -c release
             mv .build .. && cd ..
             sudo cp -f .build/release/swift-format /usr/local/bin/swift-format
           fi
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.0
+        with:
+          name: swift-format
+          path: /usr/local/bin/swift-format
       - name: Check code formatting
         run: |
           sudo swift-format -r -m lint Modular ModularTests
